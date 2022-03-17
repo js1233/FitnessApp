@@ -12,8 +12,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		9D71F53A418EC1D6ABA81E6E /* libPods-CiCdTestingApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEACF11B91AF700009319D2 /* libPods-CiCdTestingApp.a */; };
-		BC9135543CAE26CB05ED6B51 /* libPods-CiCdTestingApp-CiCdTestingAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3E8C437F956D3331E2414E /* libPods-CiCdTestingApp-CiCdTestingAppTests.a */; };
+		C97024A444BB27F7763BE5B4 /* libPods-CiCdTestingApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 668009BE5558046348413D27 /* libPods-CiCdTestingApp.a */; };
+		FD2B755487DBC3CDA1086D8E /* libPods-CiCdTestingApp-CiCdTestingAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D018C021705030B59A5B9DE0 /* libPods-CiCdTestingApp-CiCdTestingAppTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,13 +36,13 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CiCdTestingApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CiCdTestingApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CiCdTestingApp/main.m; sourceTree = "<group>"; };
-		2BEACF11B91AF700009319D2 /* libPods-CiCdTestingApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CiCdTestingApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		45C85927E12AE791E5554DA1 /* Pods-CiCdTestingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CiCdTestingApp.debug.xcconfig"; path = "Target Support Files/Pods-CiCdTestingApp/Pods-CiCdTestingApp.debug.xcconfig"; sourceTree = "<group>"; };
-		4C3E8C437F956D3331E2414E /* libPods-CiCdTestingApp-CiCdTestingAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CiCdTestingApp-CiCdTestingAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		56CA7E9F952311895BC92C2A /* Pods-CiCdTestingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CiCdTestingApp.release.xcconfig"; path = "Target Support Files/Pods-CiCdTestingApp/Pods-CiCdTestingApp.release.xcconfig"; sourceTree = "<group>"; };
+		266184D13386838888168C0F /* Pods-CiCdTestingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CiCdTestingApp.debug.xcconfig"; path = "Target Support Files/Pods-CiCdTestingApp/Pods-CiCdTestingApp.debug.xcconfig"; sourceTree = "<group>"; };
+		668009BE5558046348413D27 /* libPods-CiCdTestingApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CiCdTestingApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CiCdTestingApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		96779A196CDBBA51EE241C04 /* Pods-CiCdTestingApp-CiCdTestingAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CiCdTestingApp-CiCdTestingAppTests.release.xcconfig"; path = "Target Support Files/Pods-CiCdTestingApp-CiCdTestingAppTests/Pods-CiCdTestingApp-CiCdTestingAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		D1B69AC024D6E32D0276ADE4 /* Pods-CiCdTestingApp-CiCdTestingAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CiCdTestingApp-CiCdTestingAppTests.debug.xcconfig"; path = "Target Support Files/Pods-CiCdTestingApp-CiCdTestingAppTests/Pods-CiCdTestingApp-CiCdTestingAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B228BE0484CCC6B8F8C6C5A8 /* Pods-CiCdTestingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CiCdTestingApp.release.xcconfig"; path = "Target Support Files/Pods-CiCdTestingApp/Pods-CiCdTestingApp.release.xcconfig"; sourceTree = "<group>"; };
+		BC12B09992C5FE253F6A204C /* Pods-CiCdTestingApp-CiCdTestingAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CiCdTestingApp-CiCdTestingAppTests.release.xcconfig"; path = "Target Support Files/Pods-CiCdTestingApp-CiCdTestingAppTests/Pods-CiCdTestingApp-CiCdTestingAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		D018C021705030B59A5B9DE0 /* libPods-CiCdTestingApp-CiCdTestingAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CiCdTestingApp-CiCdTestingAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7690E622E7365DC4480A97A /* Pods-CiCdTestingApp-CiCdTestingAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CiCdTestingApp-CiCdTestingAppTests.debug.xcconfig"; path = "Target Support Files/Pods-CiCdTestingApp-CiCdTestingAppTests/Pods-CiCdTestingApp-CiCdTestingAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC9135543CAE26CB05ED6B51 /* libPods-CiCdTestingApp-CiCdTestingAppTests.a in Frameworks */,
+				FD2B755487DBC3CDA1086D8E /* libPods-CiCdTestingApp-CiCdTestingAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D71F53A418EC1D6ABA81E6E /* libPods-CiCdTestingApp.a in Frameworks */,
+				C97024A444BB27F7763BE5B4 /* libPods-CiCdTestingApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,10 +99,10 @@
 		2C7E899EF55097D0D538627E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				45C85927E12AE791E5554DA1 /* Pods-CiCdTestingApp.debug.xcconfig */,
-				56CA7E9F952311895BC92C2A /* Pods-CiCdTestingApp.release.xcconfig */,
-				D1B69AC024D6E32D0276ADE4 /* Pods-CiCdTestingApp-CiCdTestingAppTests.debug.xcconfig */,
-				96779A196CDBBA51EE241C04 /* Pods-CiCdTestingApp-CiCdTestingAppTests.release.xcconfig */,
+				266184D13386838888168C0F /* Pods-CiCdTestingApp.debug.xcconfig */,
+				B228BE0484CCC6B8F8C6C5A8 /* Pods-CiCdTestingApp.release.xcconfig */,
+				D7690E622E7365DC4480A97A /* Pods-CiCdTestingApp-CiCdTestingAppTests.debug.xcconfig */,
+				BC12B09992C5FE253F6A204C /* Pods-CiCdTestingApp-CiCdTestingAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -111,8 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				2BEACF11B91AF700009319D2 /* libPods-CiCdTestingApp.a */,
-				4C3E8C437F956D3331E2414E /* libPods-CiCdTestingApp-CiCdTestingAppTests.a */,
+				668009BE5558046348413D27 /* libPods-CiCdTestingApp.a */,
+				D018C021705030B59A5B9DE0 /* libPods-CiCdTestingApp-CiCdTestingAppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -155,12 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "CiCdTestingAppTests" */;
 			buildPhases = (
-				5698DA25DBB7702768638A24 /* [CP] Check Pods Manifest.lock */,
+				F0DCAD62485B246779F25DAC /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				E5A5D749400AFCD1C7BEED3E /* [CP] Embed Pods Frameworks */,
-				650AEA1A314EBE4B71FFBB07 /* [CP] Copy Pods Resources */,
+				AB1434747D47EFE06C36507C /* [CP] Embed Pods Frameworks */,
+				C8E30F520754EC4033C64137 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,14 +176,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "CiCdTestingApp" */;
 			buildPhases = (
-				9D9752E832C30BDF3E16FE82 /* [CP] Check Pods Manifest.lock */,
+				7852ECA6DF07CA573D542BA8 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				10830AB6F1D29EEC0D0FF57F /* [CP] Embed Pods Frameworks */,
-				B8FB3E81C7F4D655CBAADB41 /* [CP] Copy Pods Resources */,
+				9B7BC7D5FCC2D05E4EBB0402 /* [CP] Embed Pods Frameworks */,
+				CA568D6569C28A0B1B522FA0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,63 +264,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		10830AB6F1D29EEC0D0FF57F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp/Pods-CiCdTestingApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp/Pods-CiCdTestingApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp/Pods-CiCdTestingApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5698DA25DBB7702768638A24 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CiCdTestingApp-CiCdTestingAppTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		650AEA1A314EBE4B71FFBB07 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp-CiCdTestingAppTests/Pods-CiCdTestingApp-CiCdTestingAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp-CiCdTestingAppTests/Pods-CiCdTestingApp-CiCdTestingAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp-CiCdTestingAppTests/Pods-CiCdTestingApp-CiCdTestingAppTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9D9752E832C30BDF3E16FE82 /* [CP] Check Pods Manifest.lock */ = {
+		7852ECA6DF07CA573D542BA8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -342,7 +286,58 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B8FB3E81C7F4D655CBAADB41 /* [CP] Copy Pods Resources */ = {
+		9B7BC7D5FCC2D05E4EBB0402 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp/Pods-CiCdTestingApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp/Pods-CiCdTestingApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp/Pods-CiCdTestingApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB1434747D47EFE06C36507C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp-CiCdTestingAppTests/Pods-CiCdTestingApp-CiCdTestingAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp-CiCdTestingAppTests/Pods-CiCdTestingApp-CiCdTestingAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp-CiCdTestingAppTests/Pods-CiCdTestingApp-CiCdTestingAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8E30F520754EC4033C64137 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp-CiCdTestingAppTests/Pods-CiCdTestingApp-CiCdTestingAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp-CiCdTestingAppTests/Pods-CiCdTestingApp-CiCdTestingAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp-CiCdTestingAppTests/Pods-CiCdTestingApp-CiCdTestingAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA568D6569C28A0B1B522FA0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,21 +354,26 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp/Pods-CiCdTestingApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E5A5D749400AFCD1C7BEED3E /* [CP] Embed Pods Frameworks */ = {
+		F0DCAD62485B246779F25DAC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp-CiCdTestingAppTests/Pods-CiCdTestingApp-CiCdTestingAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp-CiCdTestingAppTests/Pods-CiCdTestingApp-CiCdTestingAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CiCdTestingApp-CiCdTestingAppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CiCdTestingApp-CiCdTestingAppTests/Pods-CiCdTestingApp-CiCdTestingAppTests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -428,7 +428,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1B69AC024D6E32D0276ADE4 /* Pods-CiCdTestingApp-CiCdTestingAppTests.debug.xcconfig */;
+			baseConfigurationReference = D7690E622E7365DC4480A97A /* Pods-CiCdTestingApp-CiCdTestingAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Distribution";
@@ -462,7 +462,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96779A196CDBBA51EE241C04 /* Pods-CiCdTestingApp-CiCdTestingAppTests.release.xcconfig */;
+			baseConfigurationReference = BC12B09992C5FE253F6A204C /* Pods-CiCdTestingApp-CiCdTestingAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Distribution";
@@ -492,7 +492,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45C85927E12AE791E5554DA1 /* Pods-CiCdTestingApp.debug.xcconfig */;
+			baseConfigurationReference = 266184D13386838888168C0F /* Pods-CiCdTestingApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -501,6 +501,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BQTXXBH526;
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = arm64;
 				INFOPLIST_FILE = CiCdTestingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -522,7 +523,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56CA7E9F952311895BC92C2A /* Pods-CiCdTestingApp.release.xcconfig */;
+			baseConfigurationReference = B228BE0484CCC6B8F8C6C5A8 /* Pods-CiCdTestingApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -530,6 +531,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BQTXXBH526;
+				EXCLUDED_ARCHS = arm64;
 				INFOPLIST_FILE = CiCdTestingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -581,6 +583,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = arm64;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -646,6 +649,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = arm64;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
