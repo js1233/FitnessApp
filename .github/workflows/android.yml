@@ -17,8 +17,10 @@ jobs:
       - run: cd android && ./gradlew assembleRelease && cd ..
         name: Build Android apk (release)
 
-      - name: Releasing using Hub
-        uses: js1233/CiCdTestingApp
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-          APP_FOLDER: app
+      - name: Build Signed APK
+        uses: victorbnl/build-signed-apk@main
+        with:
+          keystore: debug.keystore
+          keystore_password: android
+          key_alias: androiddebugkey
+          key_password: android
