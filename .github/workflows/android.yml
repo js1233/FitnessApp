@@ -17,8 +17,11 @@ jobs:
       - run: cd android && ./gradlew assembleRelease && cd ..
         name: Build Android apk (release)
 
-      - name: Releasing using Hub
-        uses: js1233/CiCdTestingApp@main
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-          APP_FOLDER: app
+          GITHUB_TOKEN: ${{ secrets.TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          draft: false
+          prerelease: false
