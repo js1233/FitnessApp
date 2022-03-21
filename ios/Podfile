@@ -18,13 +18,29 @@ target 'CiCdTestingApp' do
   end
 
   # Enables Flipper.
-  #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
-  # you should disable the next line.
-  use_flipper!()
+  # you should disable these next few lines.
 
-  post_install do |installer|
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+
+         if target.name == "React-Core-AccessibilityResources.bundle"
+          target.remove_from_project
+        end
+      target.build_configurations.each do |config|
+        config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'No'
+        deployment_target = config.build_settings['IPHONEOS_DEPLOYMENT_TARGET']
+        target_components = deployment_target.split
+ 
+        if target_components.length > 0
+          target_initial = target_components[0].to_i
+          if target_initial < 9
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = "9.0"
+          end
+        end
+     
+      end
+    end    
     react_native_post_install(installer)
-    __apply_Xcode_12_5_M1_post_install_workaround(installer)
   end
 end

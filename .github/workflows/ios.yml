@@ -12,7 +12,7 @@ jobs:
       - run: yarn install && cd ios && pod install
         name: Build ipa for distribution
       - run:
-          cd ios && pod install &&  xcodebuild clean archive -scheme CiCdTestingApp -configuration Release -archivePath ../builds/CiCdTestingApp.xcarchive DEVELOPMENT_TEAM=Cygnis PROVISIONING_PROFILE=17March2022DisProfile CODE_SIGN_IDENTITY=BQTXXBH526
+          cd ios && pod install && xcodebuild archive -workspace ./CiCdTestingApp.xcworkspace -scheme CiCdTestingApp -destination 'generic/platform=iOS' -archivePath ../builds/CiCdTestingApp.xcarchive && xcodebuild -exportArchive -archivePath ../builds/CiCdTestingApp.xcarchive -exportOptionsPlist ./exportOptions.plist -exportPath ../builds -allowProvisioningUpdates
           # - name: Upload APK
       #   uses: actions/upload-artifact@v2-preview # This action will upload a build apk you can then test.
       #   with:

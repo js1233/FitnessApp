@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CiCdTestingApp.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>1</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>6307DF292D18272924FD8D235507598D08DADBF4</string>
+				<key>dateExpires</key>
+				<string>17/03/2023</string>
+				<key>type</key>
+				<string>Apple Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>BQTXXBH526.org.reactjs.native.example.CiCdTestingApp</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>BQTXXBH526</string>
+				<key>get-task-allow</key>
+				<false/>
+			</dict>
+			<key>name</key>
+			<string>CiCdTestingApp.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>7886eb5f-45af-4a00-a8ec-8b93c305ae89</string>
+				<key>dateExpires</key>
+				<string>17/03/2023</string>
+				<key>name</key>
+				<string>iOS Team Ad Hoc Provisioning Profile: org.reactjs.native.example.CiCdTestingApp</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>BQTXXBH526</string>
+				<key>name</key>
+				<string></string>
+			</dict>
+			<key>versionNumber</key>
+			<string>1.0</string>
+		</dict>
+	</array>
+</dict>
+</plist>
