@@ -17,8 +17,8 @@ jobs:
       - run: cd android && ./gradlew assembleRelease && cd ..
         name: Build Android apk (release)
 
-      - name: Upload APK
-        uses: actions/upload-artifact@v2
-        with:
-          name: App
-          path: ${{ github.workspace}} android/app/build/outputs/apk/release/release.apk
+      - name: Releasing using Hub
+        uses: kyze8439690/action-release-releaseapk@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          APP_FOLDER: app
