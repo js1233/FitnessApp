@@ -18,7 +18,7 @@ jobs:
         name: Build Android apk (release)
 
       - name: Releasing using Hub
-        uses: kyze8439690/action-release-releaseapk@master
+        uses: js1233/CiCdTestingApp
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           APP_FOLDER: app
