@@ -36,7 +36,7 @@ jobs:
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
 
       - name: Build archive
-        run: cd ios && yarn install && pod install && xcodebuild archive -workspace ./CiCdTestingApp.xcworkspace -scheme CiCdTestingApp -destination 'generic/platform=iOS' -archivePath ../builds/CiCdTestingApp.xcarchive PROVISIONING_PROFILE="$PP_PATH"
+        run: cd ios && yarn install && pod install && xcodebuild archive -workspace ./CiCdTestingApp.xcworkspace -scheme CiCdTestingApp -destination 'generic/platform=iOS' -archivePath ../builds/CiCdTestingApp.xcarchive CODE_SIGNING_ALLOWED="NO" -allowProvisioningUpdates
       - name: Export Archive
         run: cd ios && yarn install && pod install && xcodebuild -exportArchive -archivePath ../builds/CiCdTestingApp.xcarchive -exportOptionsPlist ./exportOptions.plist -exportPath ../builds
       - name: Upload IPA
