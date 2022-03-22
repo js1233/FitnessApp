@@ -14,6 +14,6 @@ jobs:
       - name: Xcode version
         run: /usr/bin/xcodebuild -version
       - name: Build archive
-        run: cd ios && pod install && xcodebuild archive -workspace ./CiCdTestingApp.xcworkspace -scheme CiCdTestingApp -destination 'generic/platform=iOS' -archivePath ../builds/CiCdTestingApp.xcarchive -allowProvisioningUpdates
+        run: cd ios && yarn install && pod install && xcodebuild archive -workspace ./CiCdTestingApp.xcworkspace -scheme CiCdTestingApp -destination 'generic/platform=iOS' -archivePath ../builds/CiCdTestingApp.xcarchive -allowProvisioningUpdates
       - name: Export Archive
         run: xcodebuild -exportArchive -archivePath ../builds/CiCdTestingApp.xcarchive -exportOptionsPlist ./exportOptions.plist -exportPath ../builds -allowProvisioningUpdates
