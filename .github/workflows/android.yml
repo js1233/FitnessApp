@@ -1,0 +1,51 @@
+name: Android
+
+on: [push, pull_request]
+
+jobs:
+  apk:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js v12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - run: yarn install
+
+      - run: cd android && ./gradlew assembleRelease && cd ..
+        name: Build Android apk (release)
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v2-preview # This action will upload a build apk you can then test.
+        with:
+          name: apk
+          path: android/app/build/outputs/apk/release/app-release.apk
+  release:
+    name: Release APK
+    needs: apk
+    runs-on: macos-latest
+    steps:
+      - name: Download APK from build
+        uses: actions/download-artifact@v1
+        with:
+          name: apk
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          tag_name: ${{ github.run_number }}
+          release_name: ${{ github.event.repository.name }} v${{ github.run_number }}
+      - name: Upload Release APK
+        id: upload_release_asset
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: apk/app-release.apk
+          asset_name: ${{ github.event.repository.name }}.apk
+          asset_content_type: application/zip

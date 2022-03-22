@@ -1,7 +1,7 @@
 name: iOS OS
 on: [push, pull_request]
 jobs:
-  build:
+  ipa:
     runs-on: macos-latest
     steps:
       - name: Checkout repository
@@ -36,7 +36,39 @@ jobs:
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
 
       - name: Build archive
-        run: cd ios && yarn install && pod install && xcodebuild archive -workspace ./CiCdTestingApp.xcworkspace -scheme CiCdTestingApp -destination 'generic/platform=iOS' -archivePath ../builds/CiCdTestingApp.xcarchive -allowProvisioningUpdates
+        run: cd ios && yarn install && pod install && xcodebuild archive -workspace ./CiCdTestingApp.xcworkspace -scheme CiCdTestingApp -destination 'generic/platform=iOS' -archivePath ../builds/CiCdTestingApp.xcarchive
       - name: Export Archive
         run: cd ios && yarn install && pod install && xcodebuild -exportArchive -archivePath ../builds/CiCdTestingApp.xcarchive -exportOptionsPlist ./exportOptions.plist -exportPath ../builds
+      - name: Upload IPA
+        uses: actions/upload-artifact@v2-preview # This action will upload a build apk you can then test.
+        with:
+          name: ipa
+          path: builds/CiCdTestingApp.ipa
+  release:
+    name: Release IPA
+    needs: ipa
+    runs-on: macos-latest
+    steps:
+      - name: Download IPA from build
+        uses: actions/download-artifact@v1
+        with:
+          name: ipa
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          tag_name: ${{ github.run_number }}
+          release_name: ${{ github.event.repository.name }} v${{ github.run_number }}
+      - name: Upload Release IPA
+        id: upload_release_asset
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ipa/CiCdTestingApp.ipa
+          asset_name: ${{ github.event.repository.name }}.ipa
+          asset_content_type: application/zip
 ##..
