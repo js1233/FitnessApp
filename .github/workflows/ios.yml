@@ -19,6 +19,6 @@ jobs:
           APPLE_CERT: ${{ secrets.APPLE_CERT }}
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID}}
       - name: Build archive
-        run: cd ios && yarn install && pod install && xcodebuild archive -workspace ./CiCdTestingApp.xcworkspace -scheme CiCdTestingApp -destination 'generic/platform=iOS' -archivePath ../builds/CiCdTestingApp.xcarchive
+        run: cd ios && yarn install && pod install && xcodebuild archive -workspace ./CiCdTestingApp.xcworkspace -scheme CiCdTestingApp -destination 'generic/platform=iOS' -archivePath ../builds/CiCdTestingApp.xcarchive -allowProvisioningUpdates
       - name: Export Archive
         run: cd ios && yarn install && pod install && xcodebuild -exportArchive -archivePath ../builds/CiCdTestingApp.xcarchive -exportOptionsPlist ./exportOptions.plist -exportPath ../builds
