@@ -6,12 +6,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Set up keychain
-        run: |
-          security create-keychain -p <password> build.keychain
-          security default-keychain -s build.keychain
-          security unlock-keychain -p <password> build.keychain
-          security set-key-partition-list -S apple-tool:,apple: -s -k actions build.keychain
       - name: Install the Apple certificate and provisioning profile
         env:
           BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
@@ -45,4 +39,3 @@ jobs:
         run: cd ios && yarn install && pod install && xcodebuild archive -workspace ./CiCdTestingApp.xcworkspace -scheme CiCdTestingApp -destination 'generic/platform=iOS' -archivePath ../builds/CiCdTestingApp.xcarchive -allowProvisioningUpdates
       - name: Export Archive
         run: cd ios && yarn install && pod install && xcodebuild -exportArchive -archivePath ../builds/CiCdTestingApp.xcarchive -exportOptionsPlist ./exportOptions.plist -exportPath ../builds
-###...
