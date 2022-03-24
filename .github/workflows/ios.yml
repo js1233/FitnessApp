@@ -71,4 +71,3 @@ jobs:
           asset_path: ipa/CiCdTestingApp.ipa
           asset_name: ${{ github.event.repository.name }}.ipa
           asset_content_type: application/zip
-##..
