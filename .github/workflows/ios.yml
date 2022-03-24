@@ -1,4 +1,4 @@
-name: iOS OS
+name: Release IPA
 on: [push, pull_request]
 jobs:
   ipa:
