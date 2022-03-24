@@ -1,4 +1,4 @@
-name: Release APK-IPA
+name: Release APK
 
 on: [push, pull_request]
 
@@ -22,50 +22,7 @@ jobs:
         with:
           name: apk
           path: android/app/build/outputs/apk/release/app-release.apk
-  ipa:
-    runs-on: macos-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Install the Apple certificate and provisioning profile
-        env:
-          BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
-          P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
-          BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
-          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
-        run: |
-          # create variables
-          CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
-          PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
-          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
-
-          # import certificate and provisioning profile from secrets
-          echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode --output $CERTIFICATE_PATH
-          echo -n "$BUILD_PROVISION_PROFILE_BASE64" | base64 --decode --output $PP_PATH
-
-          # create temporary keychain
-          security create-keychain -p $KEYCHAIN_PASSWORD $KEYCHAIN_PATH
-          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
-          security unlock-keychain -p $KEYCHAIN_PASSWORD $KEYCHAIN_PATH
-
-          # import certificate to keychain
-          security import $CERTIFICATE_PATH -P $P12_PASSWORD -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
-          security list-keychain -d user -s $KEYCHAIN_PATH
-
-          # apply provisioning profile
-          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
-
-      - name: Build archive
-        run: cd ios && yarn install && pod install && xcodebuild archive -workspace ./CiCdTestingApp.xcworkspace -scheme CiCdTestingApp -destination 'generic/platform=iOS' -archivePath ../builds/CiCdTestingApp.xcarchive CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO -allowProvisioningUpdates
-      - name: Export Archive
-        run: cd ios && yarn install && pod install && xcodebuild -exportArchive -archivePath ../builds/CiCdTestingApp.xcarchive -exportOptionsPlist ./exportOptions.plist -exportPath ../builds
-      - name: Upload IPA
-        uses: actions/upload-artifact@v2-preview # This action will upload a build apk you can then test.
-        with:
-          name: ipa
-          path: builds/CiCdTestingApp.ipa
-  releaseApk:
+  release:
     name: Release APK
     needs: apk
     runs-on: macos-latest
@@ -91,33 +48,4 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: apk/app-release.apk
           asset_name: ${{ github.event.repository.name }}.apk
-          asset_content_type: application/zip
-  releaseIPA:
-    name: Release IPA
-    needs: ipa
-    runs-on: macos-latest
-    steps:
-      - name: Download IPA from build
-        uses: actions/download-artifact@v1
-        with:
-          name: ipa
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.event.repository.name }}
-          release_name: ${{ github.event.repository.name }}
-          draft: false
-          prerelease: false
-      - name: Upload Release IPA
-        id: upload_release_asset
-        uses: actions/upload-release-asset@v1.0.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ipa/CiCdTestingApp.ipa
-          asset_name: ${{ github.event.repository.name }}.ipa
           asset_content_type: application/zip
