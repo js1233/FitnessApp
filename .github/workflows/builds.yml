@@ -1,4 +1,4 @@
-name: Release APK
+name: Release APK/IPA
 
 on: [push, pull_request]
 
@@ -57,7 +57,14 @@ jobs:
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
 
       - name: Build archive
-        run: cd ios && yarn install && pod install && xcodebuild archive -workspace ./CiCdTestingApp.xcworkspace -scheme CiCdTestingApp -destination 'generic/platform=iOS' -archivePath ../builds/CiCdTestingApp.xcarchive
+        run: cd ios && yarn install && pod install && xcodebuild archive -workspace ./CiCdTestingApp.xcworkspace -scheme CiCdTestingApp -destination 'generic/platform=iOS' -archivePath ../builds/CiCdTestingApp.xcarchive CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO -allowProvisioningUpdates
+      - name: Export Archive
+        run: cd ios && yarn install && pod install && xcodebuild -exportArchive -archivePath ../builds/CiCdTestingApp.xcarchive -exportOptionsPlist ./exportOptions.plist -exportPath ../builds
+      - name: Upload IPA
+        uses: actions/upload-artifact@v2-preview # This action will upload a build apk you can then test.
+        with:
+          name: ipa
+          path: builds/CiCdTestingApp.ipa
   release:
     name: Release APK/IPA
     needs: [apk, ipa]
