@@ -94,23 +94,26 @@ jobs:
         with:
           tag_name: ${{ github.run_number }}IPA
           release_name: ${{ github.event.repository.name }} v${{ github.run_number }}IPA
-      - name: Upload Release APK
-        id: upload_apk_release_asset
+      # - name: Upload Release APK
+      #   id: upload_apk_release_asset
+      #   uses: actions/upload-release-asset@v1.0.1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      #   with:
+      #     upload_url: ${{ steps.create_apk_release.outputs.upload_url }}
+      #     asset_path: apk/app-release.apk
+      #     asset_name: ${{ github.event.repository.name }}.apk
+      #     asset_content_type: application/zip
+      - name: Upload Release APK/IPA
+        id: upload_release_asset
         uses: actions/upload-release-asset@v1.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
-          upload_url: ${{ steps.create_apk_release.outputs.upload_url }}
-          asset_path: apk/app-release.apk
-          asset_name: ${{ github.event.repository.name }}.apk
-          asset_content_type: application/zip
-      - name: Upload Release IPA
-        id: upload_ipa_release_asset
-        uses: actions/upload-release-asset@v1.0.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        with:
-          upload_url: ${{ steps.create_ipa_release.outputs.upload_url }}
-          asset_path: ipa/CiCdTestingApp.ipa
-          asset_name: ${{ github.event.repository.name }}.ipa
+          upload_url1: ${{ steps.create_apk_release.outputs.upload_url }}
+          upload_url2: ${{ steps.create_ipa_release.outputs.upload_url }}
+          asset_path1: apk/app-release.apk
+          asset_path2: ipa/CiCdTestingApp.ipa
+          asset_name1: ${{ github.event.repository.name }}.apk
+          asset_name2: ${{ github.event.repository.name }}.ipa
           asset_content_type: application/zip
