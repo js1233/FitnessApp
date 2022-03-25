@@ -22,6 +22,28 @@ jobs:
         with:
           name: apk
           path: android/app/build/outputs/apk/release/app-release.apk
+      - name: Download APK from build
+        uses: actions/download-artifact@v1
+        with:
+          name: apk
+      - name: Create APK Release
+        id: create_apk_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          tag_name: ${{ github.run_number }}APK
+          release_name: ${{ github.event.repository.name }} v${{ github.run_number }}APK
+      - name: Upload Release APK
+        id: upload_apk_release_asset
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          upload_url: ${{ steps.create_apk_release.outputs.upload_url }}
+          asset_path: apk/app-release.apk
+          asset_name: ${{ github.event.repository.name }}.apk
+          asset_content_type: application/zip
   ipa:
     runs-on: macos-latest
     steps:
@@ -65,27 +87,10 @@ jobs:
         with:
           name: ipa
           path: builds/CiCdTestingApp.ipa
-  release:
-    name: Release APK/IPA
-    needs: [apk, ipa]
-    runs-on: macos-latest
-    steps:
-      - name: Download APK from build
-        uses: actions/download-artifact@v1
-        with:
-          name: apk
       - name: Download IPA from build
         uses: actions/download-artifact@v1
         with:
           name: ipa
-      - name: Create APK Release
-        id: create_apk_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        with:
-          tag_name: ${{ github.run_number }}APK
-          release_name: ${{ github.event.repository.name }} v${{ github.run_number }}APK
       - name: Create IPARelease
         id: create_ipa_release
         uses: actions/create-release@v1
@@ -94,29 +99,62 @@ jobs:
         with:
           tag_name: ${{ github.run_number }}IPA
           release_name: ${{ github.event.repository.name }} v${{ github.run_number }}IPA
-      # - name: Upload Release APK
-      #   id: upload_apk_release_asset
-      #   uses: actions/upload-release-asset@v1.0.1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.TOKEN }}
-      #   with:
-      #     upload_url: ${{ steps.create_apk_release.outputs.upload_url }}
-      #     asset_path: apk/app-release.apk
-      #     asset_name: ${{ github.event.repository.name }}.apk
-      #     asset_content_type: application/zip
-      - name: Upload Release APK/IPA
-        id: upload_release_asset
+      - name: Upload Release IPA
+        id: upload_ipa_release_asset
         uses: actions/upload-release-asset@v1.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
-          upload_url: |
-            ${{ steps.create_apk_release.outputs.upload_url }}
-            ${{ steps.create_ipa_release.outputs.upload_url }}
-          asset_path: |
-            apk/app-release.apk
-            ipa/CiCdTestingApp.ipa
-          asset_name: |
-            ${{ github.event.repository.name }}.apk
-            ${{ github.event.repository.name }}.ipa
+          upload_url: ${{ steps.create_ipa_release.outputs.upload_url }}
+          asset_path: ipa/CiCdTestingApp.ipa
+          asset_name: ${{ github.event.repository.name }}.ipa
           asset_content_type: application/zip
+  # release:
+  #   name: Release APK/IPA
+  #   needs: [apk, ipa]
+  #   runs-on: macos-latest
+  #   steps:
+  #     - name: Download APK from build
+  #       uses: actions/download-artifact@v1
+  #       with:
+  #         name: apk
+  #     - name: Download IPA from build
+  #       uses: actions/download-artifact@v1
+  #       with:
+  #         name: ipa
+  #     - name: Create APK Release
+  #       id: create_apk_release
+  #       uses: actions/create-release@v1
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.TOKEN }}
+  #       with:
+  #         tag_name: ${{ github.run_number }}APK
+  #         release_name: ${{ github.event.repository.name }} v${{ github.run_number }}APK
+  #     - name: Create IPARelease
+  #       id: create_ipa_release
+  #       uses: actions/create-release@v1
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.TOKEN }}
+  #       with:
+  #         tag_name: ${{ github.run_number }}IPA
+  #         release_name: ${{ github.event.repository.name }} v${{ github.run_number }}IPA
+  #     - name: Upload Release APK
+  #       id: upload_apk_release_asset
+  #       uses: actions/upload-release-asset@v1.0.1
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.TOKEN }}
+  #       with:
+  #         upload_url: ${{ steps.create_apk_release.outputs.upload_url }}
+  #         asset_path: apk/app-release.apk
+  #         asset_name: ${{ github.event.repository.name }}.apk
+  #         asset_content_type: application/zip
+  #     - name: Upload Release IPA
+  #       id: upload_ipa_release_asset
+  #       uses: actions/upload-release-asset@v1.0.1
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.TOKEN }}
+  #       with:
+  #         upload_url: ${{ steps.create_ipa_release.outputs.upload_url }}
+  #         asset_path: ipa/CiCdTestingApp.ipa
+  #         asset_name: ${{ github.event.repository.name }}.ipa
+  #         asset_content_type: application/zip
