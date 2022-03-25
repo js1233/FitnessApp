@@ -110,10 +110,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
-          upload_url1: ${{ steps.create_apk_release.outputs.upload_url }}
-          upload_url2: ${{ steps.create_ipa_release.outputs.upload_url }}
-          asset_path1: apk/app-release.apk
-          asset_path2: ipa/CiCdTestingApp.ipa
-          asset_name1: ${{ github.event.repository.name }}.apk
-          asset_name2: ${{ github.event.repository.name }}.ipa
+          upload_url: |
+            ${{ steps.create_apk_release.outputs.upload_url }}
+            ${{ steps.create_ipa_release.outputs.upload_url }}
+          asset_path: |
+            apk/app-release.apk
+            ipa/CiCdTestingApp.ipa
+          asset_name: |
+            ${{ github.event.repository.name }}.apk
+            ${{ github.event.repository.name }}.ipa
           asset_content_type: application/zip
